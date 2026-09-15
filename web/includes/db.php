@@ -4,9 +4,9 @@
 date_default_timezone_set('Asia/Kuala_Lumpur');
 
 $host = '127.0.0.1';
-$db   = 'whatsapp_bot';
-$user = 'root';
-$pass = '1234'; 
+$db   = 'synergy1_yuxuan_project9_whatsapp_bot';
+$user = 'synergy1_yenping';
+$pass = 'R.zb0ZwEuGZ}*fW2'; 
 $charset = 'utf8mb4';
 
 
