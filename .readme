@@ -1,0 +1,34 @@
+# WhatsApp Suite - Automated Message Queue & Dispatch Control
+
+一个基于 **PHP (PDO)** + **Python (Playwright)** 打造的高效 WhatsApp 自动化消息队列与调度系统。支持定时消息发送、多 Worker 节点轮询绑定、以及实时状态监控。
+
+---
+
+## 🌟 核心特性
+
+- **消息队列管理**：支持即时与定时 WhatsApp 消息推送。
+- **分布式 Worker 架构**：通过 Bearer Token 机制认证 Worker 节点，支持安全的 Job Claim 机制。
+- **自动化浏览器驱动**：Python + Playwright 自动接管 WhatsApp Web，实现高可靠发送。
+- **环境安全配置**：采用 `.env` 隔离敏感 API 配置与 Token，避免密钥泄露。
+- **可视化监控面板**：实时查看 Queue 任务状态（PENDING / PROCESSING / SENT / FAILED）。
+
+---
+
+## 📁 目录结构
+
+```text
+project9_wa_bot/
+├── user_data/             # [已忽略] Playwright 浏览器 Session 缓存目录
+├── web/                   # PHP 后端及管理前端
+│   ├── api/
+│   │   └── index.php      # API 接口入口 (Heartbeat, Claim Job, Report Result)
+│   ├── assets/            # 前端样式及静态资源
+│   ├── includes/          # 数据库连接与公共逻辑
+│   ├── index.php          # 消息队列控制台 (Queue Monitor)
+│   ├── settings.php       # 系统设置
+│   └── workers.php        # Worker 节点与 API Token 管理
+├── worker/                # Python Worker 节点逻辑
+│   └── main.py            # 轮询 API 并执行 Playwright 发送的主程序
+├── .env.example           # 环境变量配置模版
+├── .gitignore             # Git 忽略文件配置
+└── README.md              # 项目说明文档

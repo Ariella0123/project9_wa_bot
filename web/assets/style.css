@@ -1,0 +1,141 @@
+:root {
+  --bg-dark: #06224e;
+  --bg-dark-hover: #045178;
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+  --card-bg: #ffffff;
+  --btn-primary: #062d5f;
+  --btn-danger: #dc2626;
+  --btn-blue: #3b82f6;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+  width: 260px;
+  background-color: var(--bg-dark);
+  color: #fff;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  font-size: 1.25rem;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #d1fae5;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.nav-item:hover, .nav-item.active {
+  background-color: var(--bg-dark-hover);
+  color: #ffffff;
+}
+
+/* 主内容区 */
+.main-content {
+  flex: 1;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+/* 统计卡片布局 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-card .label { font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 600; }
+.stat-card .val { font-size: 1.75rem; font-weight: 700; margin-top: 8px; }
+
+/* 状态 Badge */
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-sent, .badge-online { background: #dcfce7; color: #166534; }
+.badge-pending { background: #fef9c3; color: #854d0e; }
+.badge-failed { background: #fee2e2; color: #991b1b; }
+
+/* 表单与按钮 */
+input, textarea, select {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-primary { background-color: var(--btn-primary); }
+.btn-danger { background-color: var(--btn-danger); }
+.btn-blue { background-color: var(--btn-blue); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+th, td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; }
+th { color: #64748b; font-weight: 600; }

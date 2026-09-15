@@ -1,0 +1,24 @@
+# 敏感环境配置文件（绝对不能上云）
+.env
+.env.local
+
+# Playwright WhatsApp Session 数据（隐私敏感且体积大）
+user_data/
+user_data_*
+
+# Python 编译缓存与虚拟环境
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# 系统与编辑器缓存
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 日志文件
+*.log
